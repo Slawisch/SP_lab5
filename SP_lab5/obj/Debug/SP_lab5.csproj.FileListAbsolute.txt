@@ -1,0 +1,15 @@
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\bin\Debug\SP_lab5.exe.config
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\bin\Debug\SP_lab5.exe
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\bin\Debug\SP_lab5.pdb
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\obj\Debug\SP_lab5.csprojAssemblyReference.cache
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\obj\Debug\SP_lab5.Properties.Resources.resources
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\obj\Debug\SP_lab5.csproj.GenerateResource.cache
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\obj\Debug\SP_lab5.csproj.CoreCompileInputs.cache
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\obj\Debug\SP_lab5.exe
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\obj\Debug\SP_lab5.pdb
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\obj\Debug\SP_lab5.AddStudentForm.resources
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\obj\Debug\SP_lab5.Form1.resources
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\obj\Debug\SP_lab5.ChangeSurnameForm.resources
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\obj\Debug\SP_lab5.AddSubjectForm.resources
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\obj\Debug\SP_lab5.StudentInfoForm.resources
+C:\Users\dmitr\RiderProjects\SP_Lab5\SP_lab5\obj\Debug\SP_lab5.ChangeSubjectForm.resources
