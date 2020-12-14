@@ -1,25 +1,30 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace SP_lab5
 {
     public partial class Form1 : Form
     {
+        public List<Student> Students = new List<Student>();
+
+        XmlSerializer formatter = new XmlSerializer(typeof(List<Student>));
+        
         private BindingSource bindingSource;
         private IEnumerable<Student> data;
         public Form1()
         {
             InitializeComponent();
+            using (FileStream fs = new FileStream("students.xml", FileMode.OpenOrCreate))
+            {
+                Students = (List<Student>)formatter.Deserialize(fs);
+            }
+            
             bindingSource = new BindingSource();
-            data = from st in Students.studentList select st;
+            data = from st in Students select st;
             bindingSource.DataSource = data.ToList();
             dataGridView1.DataSource = bindingSource;
             comboBox1.DataSource = Enum.GetValues(typeof(SubjectEnum));
@@ -38,7 +43,7 @@ namespace SP_lab5
             addingForm.ShowDialog();
 
             if (addingForm.DialogResult == DialogResult.Yes)
-                Students.studentList.Add(addingForm.StudentObj);
+                Students.Add(addingForm.StudentObj);
 
             UpdateForm();
         }
@@ -47,11 +52,11 @@ namespace SP_lab5
         {
             foreach (DataGridViewRow item in dataGridView1.SelectedRows)
             {
-                IEnumerable<Student> removableStudent = from st in Students.studentList
+                IEnumerable<Student> removableStudent = from st in Students
                     where st.Name == item.Cells[0].Value.ToString()
                     select st;
           
-                Students.studentList.Remove(removableStudent.ToList()[0]);
+                Students.Remove(removableStudent.ToList()[0]);
             }
             UpdateForm();
         }
@@ -72,14 +77,14 @@ namespace SP_lab5
         {
             if (checkBox1.Checked)
             {
-                data = from st in Students.studentList
+                data = from st in Students
                     where (from sub in st.Subjects select sub.SubjectName.ToString())
                         .Contains(comboBox1.SelectedItem
                         .ToString())
                     select st;
             }
             else
-                data = from st in Students.studentList select st;
+                data = from st in Students select st;
             UpdateForm();
         }
 
@@ -132,9 +137,17 @@ namespace SP_lab5
         {
             if (e.ColumnIndex == 1)
             {
-                data = from st in Students.studentList orderby st.Surname select st;
+                data = from st in Students orderby st.Surname select st;
             }
             UpdateForm();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            using (FileStream fs = new FileStream("students.xml", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, Students);
+            }
         }
     }
 }

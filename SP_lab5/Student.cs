@@ -1,14 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SP_lab5
 {
+    [Serializable]
     public class Student
     {
         public List<Subject> Subjects = new List<Subject>();
         public string Name { get; set; }
         public string Surname { get; set; }
 
-        public Student(string name = "NONAME", string surname = "NOSURNAME")
+        public Student()
+        {
+            Name = "NONAME";
+            Surname = "NOSURNAME";
+        }
+        public Student(string name, string surname)
         {
             Name = name;
             Surname = surname;

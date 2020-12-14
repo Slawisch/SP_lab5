@@ -85,7 +85,6 @@
         <Compile Include="StudentInfoForm.Designer.cs">
           <DependentUpon>StudentInfoForm.cs</DependentUpon>
         </Compile>
-        <Compile Include="Students.cs" />
         <Compile Include="Subject.cs" />
         <Compile Include="SubjectEnum.cs" />
         <EmbeddedResource Include="AddStudentForm.resx">
